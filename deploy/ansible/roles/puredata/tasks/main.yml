@@ -1,6 +1,6 @@
 - name: copy default puredata patch over
   template:
-    src: templates/inToOut.pd
+    src: templates/remoteMidi.pd
     dest: "/home/chip/remoteMidi.pd"
     owner: root
     mode: 0755
