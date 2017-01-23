@@ -1,7 +1,7 @@
 - name: copy default puredata patch over
   template:
     src: templates/inToOut.pd
-    dest: "/home/{{ lookup('env', 'USER') }}/inToOut.pd"
+    dest: "/home/{{ lookup('env', 'USER') }}/remoteMidi.pd"
     owner: root
     mode: 0755
 
