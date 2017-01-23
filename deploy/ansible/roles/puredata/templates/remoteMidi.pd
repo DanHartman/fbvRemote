@@ -4,7 +4,7 @@
 #X obj 47 130 pow 2;
 #X floatatom 47 155 5 0 0 0 - - -, f 5;
 #X obj 47 267 netsend;
-#X msg 168 250 connect 192.168.44.123 55001;
+#X msg 168 250 connect 192.168.1.1 55001;
 #X obj 47 103 spigot;
 #X obj 80 75 == 7;
 #X obj 126 75 spigot;
