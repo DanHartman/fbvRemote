@@ -1,7 +1,7 @@
 - name: copy default puredata patch over
   template:
     src: templates/inToOut.pd
-    dest: "/home/{{ lookup('env', 'USER') }}/remoteMidi.pd"
+    dest: "/home/chip/remoteMidi.pd"
     owner: root
     mode: 0755
 
@@ -15,7 +15,7 @@
 - name: install a service file for systemd to launch
   template:
     src: templates/pd_run.sh
-    dest: "/home/{{ lookup('env', 'USER') }}/pd_run.sh"
+    dest: "/home/chip/pd_run.sh"
     owner: root
     mode: 0755
   notify: reload systemd
