@@ -1,0 +1,15 @@
+- name: Provision next thing co chip to send midi data from line6 fbv over wifi
+  hosts: all
+  become: yes
+  become_method: sudo
+  roles:
+    - { role: common, tags: ['common'] }
+    - { role: puredata, tags: ['puredata'] }
+  handlers:
+    - name: restart ssh
+      service:
+        name: ssh
+        state: restarted
+    - name: reload systemd
+      become: yes
+      command: systemctl daemon-reload
