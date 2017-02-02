@@ -1,0 +1,11 @@
+# udev rule for identifying when the FBV foot controller
+# has been plugged in.  There are many more identifiers
+# that could be added here, but until we're plugging more
+# USB devices in, it doesn't matter.
+
+KERNEL=="dmmidi1"
+SUBSYSTEM=="sound"
+SUBSYSTEMS=="sound"
+ATTRS{id}=="II"
+TAG+="systemd"
+ENV{SYSTEMD_WANTS}="pd_run.service"

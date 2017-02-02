@@ -20,10 +20,16 @@
     mode: 0755
   notify: reload systemd
 
-- name: start the pd_run service
+- name: enable the pd_run service
   systemd:
     daemon_reload: yes
     enabled: yes
-    state: restarted
     name: pd_run
   notify: reload systemd
+
+- name: install a udev rule to launch pd when foot controller is connected
+  template:
+    src: templates/pd.rules
+    dest: /etc/udev/rules.d/pd.rules
+    owner: root
+    mode: 0644
