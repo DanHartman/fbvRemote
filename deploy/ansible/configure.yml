@@ -2,10 +2,8 @@
   hosts: all
   become: yes
   become_method: sudo
-  
   roles:
-    - name: Bootstrap a legacy python 2.4 host
-      raw: apt-get -y install python-simplejson
+    - { role: python, tags: ['python'] }
     - { role: common, tags: ['common'] }
     - { role: puredata, tags: ['puredata'] }
   handlers:
