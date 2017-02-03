@@ -18,4 +18,3 @@ apt_packages:
   - libasound2 
   - alsa-utils
   - wget
-  - nss-myhostname
